@@ -1,5 +1,10 @@
+import { useLocation } from 'react-router-dom';
 
 const View = () => {
+  const location = useLocation();
+
+  const { data } = location.state || {};
+
   return (
 <>
 <div className="container pm-certificate-container">
@@ -20,7 +25,7 @@ const View = () => {
               </div>
               <div className="pm-certificate-name underline margin-0 col-xs-8 text-center">
                 <span id="name" className="pm-name-text bold">
-                  Name: TBD
+                  {data.username}
                 </span>
               </div>
               <div className="col-xs-2">
@@ -36,7 +41,7 @@ const View = () => {
               <div className="pm-earned col-xs-8 text-center">
                 <span className="pm-earned-text padding-0 block cursive">has earned</span>
                 <span id="grade" className="pm-credits-text block bold sans">
-                  Grade: TBD
+                  {data.grade}
                 </span>
               </div>
               <div className="col-xs-2">
@@ -66,7 +71,7 @@ const View = () => {
               </div>
               <div className="pm-course-title underline col-xs-8 text-center">
                 <span id="course" className="pm-credits-text block bold sans">
-                  Course: TBD
+                 {data.course}
                 </span>
               </div>
             </div>
@@ -74,11 +79,11 @@ const View = () => {
           <div className="col-xs-12">
             <div className="row">
               <div className="col pm-certified">
-                <span id="ID" className="pm-credits-text block bold sans">Certificate ID: TBD
+                <span id="ID" className="pm-credits-text block bold sans">{data.cert_id}
                 </span>
               </div>
               <div className="col pm-certified text-end">
-                <span id="date" className="pm-credits-text block sans">Date of Completion: TBD</span>
+                <span id="date" className="pm-credits-text block sans">{data.issuedate}</span>
                 <span className="pm-credits-text block sans">Place: Trivandrum</span><br />
               </div>
             </div>
