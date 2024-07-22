@@ -8,12 +8,12 @@ const Home = () => {
 
   const navigate=useNavigate();
   const handleSubmit= async()=>{
-    const response = await fetch(`http://localhost:5000/certificate/${certificateID}`);    
+    const response = await fetch(`/api/certificate/${certificateID}`);    
     const data = await response.json();
    console.log(data)
     if (data !=null) {
       navigate(`/view`,{state:{data}});
-    } else {
+    } else { 
       alert(data);
     }
   }

@@ -9,7 +9,7 @@ const query =require ('./Models/queries.js')
 
 app.use(
     cors({ 
-      origin: "http://localhost:3000",
+      origin: "http://127.0.0.1:3000",
     })
   );
 // app.use(express.json());
@@ -22,7 +22,7 @@ app.listen(port,()=>{
 app.use(express.json());
 // app.use('/',routes);
 // dotenv.config();
-const uri="mongodb://localhost:27017/Certi-App";
+const uri="mongodb://mongodb:27017/Certi-App";
 mongoose.connect(
     uri   
 );
@@ -39,7 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.post('/submit-form',async(req,res)=>{
-    console.log(req.body)
+    console.log(req.body,'reached')
 
     try{
         const data=req.body;
