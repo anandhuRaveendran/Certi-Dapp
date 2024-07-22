@@ -37,15 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.urlencoded({ extended: true }));
 
-// let certificates = [];
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-// });
-
-// app.get('/issue', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public', 'issueCertificate.html'));
-// });
 app.post('/submit-form',async(req,res)=>{
     console.log(req.body)
 
@@ -63,20 +55,6 @@ app.post('/submit-form',async(req,res)=>{
     
 app.get('')
 
-// Route to handle form submissions
-// app.post('/submit-form', (req, res) => {
-//     const { certificateID,courseName, candidateName, grade, date } = req.body;
-
-//     // Store form data in the array
-//     certificates.push({ certificateID, courseName, candidateName, grade, date });
-
-//     res.redirect('/thank-you');
-//     // Redirect to the certificate view page with the details
-//     // res.redirect(`/certificate?id=${id}`);
-// });
-
-// app.get('/thank-you', (req, res) => {
-// });
 
 app.get('/certificate', (req,res) => {
     res.json(certificates);
