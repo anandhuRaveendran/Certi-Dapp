@@ -2,8 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const cors = require("cors");
-// const Router=require('express');
-// var router=Router();
+
 const mongoose=require('mongoose');
 const query =require ('./Models/queries.js')
 
@@ -12,7 +11,6 @@ app.use(
       origin: "http://127.0.0.1:3000",
     })
   );
-// app.use(express.json());
 const port=5000;
 
 app.listen(port,()=>{
@@ -20,8 +18,7 @@ app.listen(port,()=>{
 });
 
 app.use(express.json());
-// app.use('/',routes);
-// dotenv.config();
+
 const uri="mongodb://mongodb:27017/Certi-App";
 mongoose.connect(
     uri   
