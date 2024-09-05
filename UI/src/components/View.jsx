@@ -2,108 +2,63 @@ import { useLocation } from 'react-router-dom';
 
 const View = () => {
   const location = useLocation();
-
-  const { data } = location.state || {};
+  const { result } = location.state || {};
 
   return (
-<>
-<div className="container pm-certificate-container">
-    <div className="outer-border"></div>
-    <div className="inner-border"></div>
-    <div className="pm-certificate-border col-xs-12">
-      <div className="row pm-certificate-header">
-        <div className="pm-certificate-title cursive col-xs-12 text-center">
-          <h2>Kerala Blockchain Academy</h2>
-        </div>
-      </div>
-      <div className="row pm-certificate-body">
-        <div className="pm-certificate-block">
-          <div className="col-xs-12">
-            <div className="row">
-              <div className="col-xs-2">
-                {/* LEAVE EMPTY */}
-              </div>
-              <div className="pm-certificate-name underline margin-0 col-xs-8 text-center">
-                <span id="name" className="pm-name-text bold">
-                  {data.username}
-                </span>
-              </div>
-              <div className="col-xs-2">
-                {/* <!-- LEAVE EMPTY --> */}
-              </div>
-            </div>
-          </div>
-          <div className="col-xs-12">
-            <div className="row">
-              <div className="col-xs-2">
-                {/* <!-- LEAVE EMPTY --> */}
-              </div>
-              <div className="pm-earned col-xs-8 text-center">
-                <span className="pm-earned-text padding-0 block cursive">has earned</span>
-                <span id="grade" className="pm-credits-text block bold sans">
-                  {data.grade}
-                </span>
-              </div>
-              <div className="col-xs-2">
-                {/* <!-- LEAVE EMPTY --> */}
-              </div>
-              <div className="col-xs-12"></div>
-            </div>
-          </div>
-          <div className="col-xs-12">
-            <div className="row">
-              <div className="col-xs-2">
-                {/* <!-- LEAVE EMPTY --> */}
-              </div>
-              <div className="pm-course-title col-xs-8 text-center">
-                <span className="pm-earned-text block cursive">while completing the training course
-                  entitled</span>
-              </div>
-              <div className="col-xs-2">
-                {/* <!-- LEAVE EMPTY --> */}
-              </div>
-            </div>
-          </div>
-          <div className="col-xs-12">
-            <div className="row">
-              <div className="col-xs-2">
-                {/* <!-- LEAVE EMPTY --> */}
-              </div>
-              <div className="pm-course-title underline col-xs-8 text-center">
-                <span id="course" className="pm-credits-text block bold sans">
-                 {data.course}
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="col-xs-12">
-            <div className="row">
-              <div className="col pm-certified">
-                <span id="ID" className="pm-credits-text block bold sans">{data.cert_id}
-                </span>
-              </div>
-              <div className="col pm-certified text-end">
-                <span id="date" className="pm-credits-text block sans">{data.issuedate}</span>
-                <span className="pm-credits-text block sans">Place: Trivandrum</span><br />
-              </div>
-            </div>
+    <div className="relative w-[800px] h-[600px] bg-[#618597] p-[30px] text-[#333] font-sans shadow-md flex items-center justify-center">
+      <div className="absolute w-[794px] h-[594px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 border-2 border-white"></div>
+      <div className="absolute w-[730px] h-[530px] left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 border-2 border-white"></div>
+      
+      <div className="relative w-[720px] h-[520px] border border-[#E1E5F0] bg-white flex flex-col items-center justify-center">
+        <div className="mb-[10px]">
+          <div className="relative top-[40px] text-center font-[Pinyon Script] text-[34px]">
+            <h2>Kerala Blockchain Academy</h2>
           </div>
         </div>
-        <div className="col-xs-12">
-          <div className="row">
-            <div className="pm-certificate-footer">
-              <br /><br />
-              <div className="col pm-certified text-end">
-                <span className="bold block">(sd/-)</span>
-                <span className="bold block">Director</span>
+
+        <div className="p-[20px]">      
+          <div className="flex justify-center mb-[15px]">
+            <div className="flex-1"></div>
+            <div className="text-center">
+              <span className="text-[20px] font-[Pinyon Script]">{result.username} has scored grade </span>
+              <span className="text-[50px] font-bold">{result.grade}</span>
+            </div>
+            <div className="flex-1"></div>
+          </div>
+          
+          <div className="flex justify-center mb-[15px]">
+            <div className="flex-1"></div>
+            <div className="text-center">
+              <span>while completing the training course entitled</span>
+            </div>
+            <div className="flex-1"></div>
+          </div>
+
+          <div className="flex justify-center mb-[20px]">
+            <div className="flex-1"></div>
+            <div className="text-center">
+              <span className="text-[20px] font-bold">{result.course}</span>
+            </div>
+            <div className="flex-1"></div>
+          </div>
+          
+          <div className="flex justify-between items-center">
+            <div className="text-center text-[12px]">
+              <span>certified by KBA</span>
+              <div className="h-[40px] w-full">ID : {result.cert_id}</div>
+            </div>
+            <div className="flex-1"></div>
+            <div className="text-center text-[12px]">
+              <span>Date Completed</span>
+              <div>
+                <span className="text-[15px] font-bold">{result.issuedate}</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</>  )
+  );
 }
 
-export default View
+export default View;

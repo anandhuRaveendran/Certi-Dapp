@@ -1,9 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Outlet,useLocation } from "react-router-dom";
 import NavBar from "../components/NavBar";
 
 const MainLayout = () => {
+  const location = useLocation();
+  const noNavBarRoutes = ['/view'];
+  const shouldHideNavBar = noNavBarRoutes.includes(location.pathname);
+
   return (<>
-  <NavBar/>
+    {!shouldHideNavBar && <NavBar />}
   <Outlet/> 
   </>
  )

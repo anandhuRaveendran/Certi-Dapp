@@ -2,19 +2,35 @@ import logo from '../assets/images/Logo.png'
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BrowserProvider, Contract } from 'ethers';
+import { abi } from '../scdata/Cert.json';
+import { CertModuleCert } from '../scdata/deployed_addresses.json';
 const Home = () => {
+  const provider = new BrowserProvider(window.ethereum);
+
   const [certificateID, setcertificateID] = useState('');
   // const [data, setData] = useState([]);
 
   const navigate=useNavigate();
   const handleSubmit= async()=>{
-    const response = await fetch(`/api/certificate/${certificateID}`);    
-    const data = await response.json();
-   console.log(data)
-    if (data !=null) {
-      navigate(`/view`,{state:{data}});
+    // const response = await fetch(`/api/certificate/${certificateID}`);    
+    // const data = await response.json();
+
+    const instance = new Contract(CertModuleCert, abi, provider);
+    const data = await instance.Certificates(certificateID);
+    console.log('blockchain :', data[0])
+    const result = {
+      'cert_id': certificateID,
+      'username': data[0],
+      'course': data[1],
+      'grade': data[2],
+      'issuedate':data[3]
+    }
+    console.log(result)
+    if (result.username !='') {
+      navigate(`/view`,{state:{result}});
     } else { 
-      alert(data);
+      alert('please enter valid id');
     }
   }
   return (
