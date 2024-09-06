@@ -55,12 +55,12 @@ docker compose down
 
 ## 🔩 Built With
 
-* [JavaScript](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [NodeJs](https://maven.apache.org/) - Dependency Management
-* [MongoDB](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-* [Docker](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-* [Solidity]() -
-* [Hardhat]()
+* JavaScript
+* NodeJs
+* MongoDB
+* Docker
+* Solidity
+* Hardhat
 
 
 
