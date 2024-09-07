@@ -77,7 +77,11 @@ docker compose down
 * Solidity
 * Hardhat
 
-
+# 📈 Planned Updates 🗓️
+* UI updates
+* Admin App And Web App
+* Mobile App
+* Production Release
 
 
 ## License
