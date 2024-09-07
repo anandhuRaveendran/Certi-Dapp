@@ -30,7 +30,7 @@ open another terminal and copy the code and execute for get contract hash
 ```
 cd HardHat
 npm i
-npm i hardhat
+npx hardhat ignition deploy ignition/modules/Cert.js
 npx hardhat compile
 ```
 then run the hardhat node
@@ -45,7 +45,7 @@ docker compose build
 ```
 docker compose up
 ```
-This will set up and run your certificate DApp in a Docker container. The app will be accessible on http://localhost:5174.
+This will set up and run your certificate DApp in a Docker container. The app will be accessible on http://localhost:3000.
 
 To stop the running containers, use
 
