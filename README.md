@@ -4,7 +4,7 @@ This project is a blockchain-based certificate issuing web application. It allow
 with the certificate details and ID securely stored on the blockchain. Students can retrieve and view their certificates by
 searching for their unique certificate ID.
 # Demo
-<a href="https://youtu.be/RUkfEyufHmU?si=KhFn3F4xolUqwCl4"><img src="">
+<a href="https://youtu.be/RUkfEyufHmU?si=KhFn3F4xolUqwCl4"><img src="https://github.com/anandhuRaveendran/Certi-Dapp/blob/main/UI/src/assets/thumb.png" width="250px" height="150px">
 
 ## Getting Started
 
