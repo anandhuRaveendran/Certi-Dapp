@@ -30,9 +30,15 @@ code .
 ```
 # ⛑️ Initalize Hardhat
 open another terminal and copy the code and execute for get contract hash
+
 ```
 cd HardHat
 npm i
+```
+for getting the contract hash you have to paste your sepolia infura url and private key
+below code line
+https://github.com/anandhuRaveendran/Certi-Dapp/blob/2e1812a83a14e89ed88d15f9358dae2c02453402/HardHat/hardhat.config.js#L11
+```
 npx hardhat ignition deploy ignition/modules/Cert.js
 npx hardhat compile
 ```
