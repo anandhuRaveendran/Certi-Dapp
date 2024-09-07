@@ -60,11 +60,11 @@ if (data) {
 
       <h3 className="text-center text-3xl font-bold mb-4">Issue New Certificate</h3>
           <div className="flex flex-col justify-center items-center ">
-
-            <form onSubmit={handleSubmit}>
-            <button onClick={connectTometaMask}>
+            <button className="border-2 bg-orange-700 hover:bg-orange-400 mt-6 ml-10" onClick={connectTometaMask}>
           connect to metamask
         </button>
+            <form onSubmit={handleSubmit}>
+
         <div className="border-2 rounded px-20" >
           <div className="p-2">
           <label className="block " htmlFor="course">Select Course *</label>
@@ -97,7 +97,7 @@ if (data) {
           <label className="block" htmlFor="issuedate">Issue Date *</label>
           <input  className="border-2 border-black" id="issuedate" name="issuedate"onChange={(e) => setIssuedate(e.target.value)} required/>
         </div>
-        <button className="border-2 bg-orange-700 hover:bg-orange-400 mt-6 ml-10" type="submit" >Issue </button></div>
+        <button className="border-2 bg-orange-700 hover:bg-orange-400 mt-6 ml-20" type="submit" >Issue Certificate</button></div>
         </form>
       </div>
     </div>
